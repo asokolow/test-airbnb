@@ -7,88 +7,164 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <h1>[PROPERTY_NAME]</h1>
-    <p class="tagline">Everything you need for your stay</p>
-    <nav class="section-nav" aria-label="Guide sections">
-      <a href="#checkin">Check-in</a>
-      <a href="#wifi">Wifi</a>
-      <a href="#parking">Parking</a>
-      <a href="#nearby">Nearby</a>
-    </nav>
-  </header>
-
   <main>
-    <section id="checkin" class="guide-section">
-      <h2>Check-in &amp; House Rules</h2>
-      <dl class="info-list">
-        <dt>Check-in</dt>
-        <dd>After [ARRIVAL_TIME] — door code: <strong>[DOOR_CODE]</strong></dd>
-        <dt>Check-out</dt>
-        <dd>Before [CHECKOUT_TIME]</dd>
-      </dl>
-      <h3>House rules</h3>
-      <ul>
-        <li>No smoking indoors</li>
-        <li>Quiet hours after [QUIET_HOURS_START]</li>
-        <li>No parties or events</li>
-      </ul>
+    <div class="hero">
+      <span class="hero-label">Cover photo</span>
+    </div>
+
+    <header class="welcome">
+      <p class="eyebrow">Welcome to</p>
+      <h1>[PROPERTY_NAME]</h1>
+      <p class="address">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" />
+          <circle cx="12" cy="10" r="2.5" />
+        </svg>
+        [PROPERTY_ADDRESS]
+      </p>
+    </header>
+
+    <section class="quick-facts" aria-label="Quick facts">
+      <div class="quick-fact-card">
+        <p class="quick-fact-label">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 8.5C8 3 16 3 22 8.5" />
+            <path d="M5.5 12C9.5 8.5 14.5 8.5 18.5 12" />
+            <path d="M9 15.5C10.9 13.8 13.1 13.8 15 15.5" />
+            <circle cx="12" cy="19" r="1.25" fill="currentColor" stroke="none" />
+          </svg>
+          Wifi
+        </p>
+        <p class="quick-fact-value mono">[WIFI_NETWORK_NAME]</p>
+        <p class="quick-fact-sub mono">[WIFI_PASSWORD]</p>
+      </div>
+      <div class="quick-fact-card">
+        <p class="quick-fact-label">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3" />
+            <path d="M3 12h11" />
+            <path d="M10 8l4 4-4 4" />
+          </svg>
+          Check-in
+        </p>
+        <p class="quick-fact-value">[ARRIVAL_TIME]</p>
+      </div>
+      <div class="quick-fact-card">
+        <p class="quick-fact-label">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h3" />
+            <path d="M10 12h11" />
+            <path d="M17 8l4 4-4 4" />
+          </svg>
+          Check-out
+        </p>
+        <p class="quick-fact-value">[CHECKOUT_TIME]</p>
+      </div>
     </section>
 
-    <section id="wifi" class="guide-section">
-      <h2>Wifi &amp; Essentials</h2>
-      <dl class="info-list">
-        <dt>Network</dt>
-        <dd>[WIFI_NETWORK_NAME]</dd>
-        <dt>Password</dt>
-        <dd>[WIFI_PASSWORD]</dd>
-      </dl>
-      <p>Extra towels and linens are in [TOWEL_LOCATION]. Trash and recycling bins are [TRASH_LOCATION] — pickup is [TRASH_DAY].</p>
-    </section>
+    <section id="house" class="guide-section">
+      <h2>The house</h2>
 
-    <section id="parking" class="guide-section">
-      <h2>Parking &amp; Getting There</h2>
-      <p>[PARKING_INSTRUCTIONS — e.g. "Park in the driveway; street parking is also available after 6pm."]</p>
-      <p><a href="#"><!-- TODO: replace with real maps link -->View on map</a></p>
+      <details class="house-row">
+        <summary>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="6.5" cy="16.5" r="3.5" />
+            <path d="M9.5 13.5L19 4" />
+            <path d="M15 8l3 3" />
+            <path d="M18 5l2.5 2.5" />
+          </svg>
+          <span>Getting in</span>
+        </summary>
+        <p>Keybox left of the [DOOR_LOCATION], code <strong class="mono">[DOOR_CODE]</strong></p>
+      </details>
+
+      <details class="house-row">
+        <summary>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 14.5V5a2 2 0 0 0-4 0v9.5a4 4 0 1 0 4 0z" />
+            <circle cx="10" cy="16" r="1" fill="currentColor" stroke="none" />
+          </svg>
+          <span>Heating &amp; hot water</span>
+        </summary>
+        <p>[HEATING_INSTRUCTIONS]</p>
+      </details>
+
+      <details class="house-row">
+        <summary>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7h16" />
+            <path d="M9 7V4h6v3" />
+            <path d="M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13" />
+            <path d="M10 11v6" />
+            <path d="M14 11v6" />
+          </svg>
+          <span>Bins &amp; recycling</span>
+        </summary>
+        <p>Bins are [TRASH_LOCATION] — pickup is [TRASH_DAY]</p>
+      </details>
+
+      <details class="house-row">
+        <summary>
+          <span>House rules</span>
+        </summary>
+        <p>No smoking indoors. Quiet hours after [QUIET_HOURS_START]. No parties or events.</p>
+      </details>
     </section>
 
     <section id="nearby" class="guide-section">
-      <h2>Restaurants &amp; Activities</h2>
-      <h3>Restaurants</h3>
-      <div class="card-grid">
-        <article class="card">
-          <h4>[RESTAURANT_1_NAME]</h4>
-          <p>[One-line description — cuisine, why we like it]</p>
+      <h2>Around the corner</h2>
+      <div class="tile-grid">
+        <article class="tile">
+          <div class="tile-photo"></div>
+          <p class="tile-name">[RESTAURANT_1_NAME]</p>
+          <p class="tile-meta">[X min walk]</p>
         </article>
-        <article class="card">
-          <h4>[RESTAURANT_2_NAME]</h4>
-          <p>[One-line description]</p>
+        <article class="tile">
+          <div class="tile-photo"></div>
+          <p class="tile-name">[RESTAURANT_2_NAME]</p>
+          <p class="tile-meta">[X min walk]</p>
         </article>
-        <article class="card">
-          <h4>[RESTAURANT_3_NAME]</h4>
-          <p>[One-line description]</p>
+        <article class="tile">
+          <div class="tile-photo"></div>
+          <p class="tile-name">[RESTAURANT_3_NAME]</p>
+          <p class="tile-meta">[X min walk]</p>
         </article>
-      </div>
-      <h3>Activities</h3>
-      <div class="card-grid">
-        <article class="card">
-          <h4>[ACTIVITY_1_NAME]</h4>
-          <p>[One-line description]</p>
+        <article class="tile">
+          <div class="tile-photo"></div>
+          <p class="tile-name">[ACTIVITY_1_NAME]</p>
+          <p class="tile-meta">[X min walk]</p>
         </article>
-        <article class="card">
-          <h4>[ACTIVITY_2_NAME]</h4>
-          <p>[One-line description]</p>
+        <article class="tile">
+          <div class="tile-photo"></div>
+          <p class="tile-name">[ACTIVITY_2_NAME]</p>
+          <p class="tile-meta">[X min walk]</p>
         </article>
-        <article class="card">
-          <h4>[ACTIVITY_3_NAME]</h4>
-          <p>[One-line description]</p>
+        <article class="tile">
+          <div class="tile-photo"></div>
+          <p class="tile-name">[ACTIVITY_3_NAME]</p>
+          <p class="tile-meta">[X min walk]</p>
+        </article>
+        <article class="tile">
+          <div class="tile-photo"></div>
+          <p class="tile-name">Parking</p>
+          <p class="tile-meta">[Free after TIME]</p>
         </article>
       </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <p>Questions during your stay? Text [HOST_NAME] at [HOST_PHONE]</p>
-  </footer>
+    <section class="host-contact" aria-label="Host contact">
+      <div class="host-avatar">[HOST_INITIALS]</div>
+      <div class="host-info">
+        <p class="host-name">[HOST_NAME], your host</p>
+        <p class="host-response">Usually replies within [RESPONSE_TIME]</p>
+      </div>
+      <a class="host-message" href="#"><!-- TODO: replace with real messaging link -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 5h16v11H9l-4 4V5z" />
+        </svg>
+        Message
+      </a>
+    </section>
+  </main>
 </body>
 </html>
