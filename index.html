@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome — Your Stay Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>[PROPERTY_NAME]</h1>
+    <p class="tagline">Everything you need for your stay</p>
+    <nav class="section-nav" aria-label="Guide sections">
+      <a href="#checkin">Check-in</a>
+      <a href="#wifi">Wifi</a>
+      <a href="#parking">Parking</a>
+      <a href="#nearby">Nearby</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="checkin" class="guide-section">
+      <h2>Check-in &amp; House Rules</h2>
+      <dl class="info-list">
+        <dt>Check-in</dt>
+        <dd>After [ARRIVAL_TIME] — door code: <strong>[DOOR_CODE]</strong></dd>
+        <dt>Check-out</dt>
+        <dd>Before [CHECKOUT_TIME]</dd>
+      </dl>
+      <h3>House rules</h3>
+      <ul>
+        <li>No smoking indoors</li>
+        <li>Quiet hours after [QUIET_HOURS_START]</li>
+        <li>No parties or events</li>
+      </ul>
+    </section>
+
+    <section id="wifi" class="guide-section">
+      <h2>Wifi &amp; Essentials</h2>
+      <dl class="info-list">
+        <dt>Network</dt>
+        <dd>[WIFI_NETWORK_NAME]</dd>
+        <dt>Password</dt>
+        <dd>[WIFI_PASSWORD]</dd>
+      </dl>
+      <p>Extra towels and linens are in [TOWEL_LOCATION]. Trash and recycling bins are [TRASH_LOCATION] — pickup is [TRASH_DAY].</p>
+    </section>
+
+    <section id="parking" class="guide-section">
+      <h2>Parking &amp; Getting There</h2>
+      <p>[PARKING_INSTRUCTIONS — e.g. "Park in the driveway; street parking is also available after 6pm."]</p>
+      <p><a href="#"><!-- TODO: replace with real maps link -->View on map</a></p>
+    </section>
+
+    <section id="nearby" class="guide-section">
+      <h2>Restaurants &amp; Activities</h2>
+      <h3>Restaurants</h3>
+      <div class="card-grid">
+        <article class="card">
+          <h4>[RESTAURANT_1_NAME]</h4>
+          <p>[One-line description — cuisine, why we like it]</p>
+        </article>
+        <article class="card">
+          <h4>[RESTAURANT_2_NAME]</h4>
+          <p>[One-line description]</p>
+        </article>
+        <article class="card">
+          <h4>[RESTAURANT_3_NAME]</h4>
+          <p>[One-line description]</p>
+        </article>
+      </div>
+      <h3>Activities</h3>
+      <div class="card-grid">
+        <article class="card">
+          <h4>[ACTIVITY_1_NAME]</h4>
+          <p>[One-line description]</p>
+        </article>
+        <article class="card">
+          <h4>[ACTIVITY_2_NAME]</h4>
+          <p>[One-line description]</p>
+        </article>
+        <article class="card">
+          <h4>[ACTIVITY_3_NAME]</h4>
+          <p>[One-line description]</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Questions during your stay? Text [HOST_NAME] at [HOST_PHONE]</p>
+  </footer>
+</body>
+</html>
