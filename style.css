@@ -1,11 +1,13 @@
 :root {
   --color-bg: #faf6f1;
   --color-surface: #ffffff;
+  --surface-2: #f3ece3;
   --color-text: #2b2420;
   --color-text-muted: #6b6058;
   --color-accent: #a8492a;
   --color-border: #e8ddd0;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
@@ -26,117 +28,240 @@ body {
   line-height: 1.5;
 }
 
-.site-header {
-  padding: var(--space-4) var(--space-2) var(--space-3);
-  text-align: center;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.site-header h1 {
-  margin: 0 0 var(--space-1);
-  font-size: 1.75rem;
-}
-
-.tagline {
-  margin: 0 0 var(--space-3);
-  color: var(--color-text-muted);
-}
-
-.section-nav {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-3);
-  flex-wrap: wrap;
-}
-
-.section-nav a {
-  color: var(--color-accent);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.section-nav a:hover,
-.section-nav a:focus {
-  text-decoration: underline;
-}
-
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-2);
+  padding: var(--space-2);
 }
 
-.guide-section {
-  padding: var(--space-4) 0;
-  border-bottom: 1px solid var(--color-border);
+.icon {
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.15em;
+  margin-right: 0.4em;
+  flex-shrink: 0;
 }
 
-.guide-section:last-child {
-  border-bottom: none;
+.hero {
+  height: 150px;
+  background: var(--color-accent);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-2);
+  margin-top: var(--space-2);
 }
 
-.guide-section h2 {
-  margin-top: 0;
-  font-size: 1.375rem;
+.hero-label {
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  background: var(--color-surface);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
 }
 
-.guide-section h3 {
-  font-size: 1.05rem;
+.welcome {
+  margin: var(--space-3) 0 0;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
   color: var(--color-text-muted);
-  margin-bottom: var(--space-1);
+  letter-spacing: 0.04em;
+  margin: 0 0 0.25rem;
 }
 
-.info-list {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--space-1) var(--space-2);
-  margin: var(--space-2) 0;
+.welcome h1 {
+  margin: 0 0 0.4rem;
+  font-size: 1.75rem;
 }
 
-.info-list dt {
-  font-weight: 600;
+.address {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
-}
-
-.info-list dd {
   margin: 0;
 }
 
-.card-grid {
+.quick-facts {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-2);
-  margin: var(--space-2) 0 var(--space-3);
+  margin: var(--space-3) 0 var(--space-4);
 }
 
 @media (min-width: 480px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .quick-facts {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+.quick-fact-card {
+  background: var(--surface-2);
   border-radius: var(--radius);
   padding: var(--space-2);
 }
 
-.card h4 {
-  margin: 0 0 var(--space-1);
+.quick-fact-label {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.4rem;
 }
 
-.card p {
+.quick-fact-value {
+  font-size: 1.05rem;
+  font-weight: 600;
   margin: 0;
+}
+
+.quick-fact-sub {
+  font-size: 0.8rem;
   color: var(--color-text-muted);
+  margin: 0.15rem 0 0;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.guide-section {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+}
+
+.guide-section h2 {
+  margin: 0 0 var(--space-2);
+  font-size: 1.375rem;
+}
+
+.house-row {
+  background: var(--surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.house-row summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.house-row summary::-webkit-details-marker {
+  display: none;
+}
+
+.house-row summary::after {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border-right: 2px solid var(--color-text-muted);
+  border-bottom: 2px solid var(--color-text-muted);
+  transform: rotate(45deg);
+  margin-left: auto;
+  transition: transform 0.15s ease;
+}
+
+.house-row[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.house-row p {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .tile-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tile-photo {
+  height: 90px;
+  background: var(--surface-2);
+  border-radius: var(--radius);
+}
+
+.tile-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0;
+}
+
+.tile-meta {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0.15rem 0 0;
+}
+
+.host-contact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-2);
+  padding: var(--space-3) 0 var(--space-4);
+}
+
+.host-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.host-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.host-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.host-response {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0.15rem 0 0;
+}
+
+.host-message {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
   font-size: 0.9rem;
 }
 
-.site-footer {
-  text-align: center;
-  padding: var(--space-3) var(--space-2) var(--space-4);
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+.host-message:hover,
+.host-message:focus {
+  text-decoration: underline;
 }
 
 .welcome-card {
