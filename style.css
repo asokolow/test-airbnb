@@ -249,6 +249,21 @@ main {
   margin: 0.15rem 0 0;
 }
 
+.host-phone {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+}
+
+.host-phone a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.host-phone a:hover,
+.host-phone a:focus {
+  text-decoration: underline;
+}
+
 .host-message {
   display: flex;
   align-items: center;
